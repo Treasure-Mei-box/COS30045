@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Data Visualisation"/>
+    <meta name="keywords" content="HTML, CSS, D3"/>
+    <meta name="Mr.Mohamad Faizal Alias" content="Yadanar Theint"/>
+
+    <title>Task 2.2 Drawing with data</title>
+    <!-- Insert description of exercise -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+		
+    
+    <nav >
+        <a href="Main.html" class="button1">Main Page</a>
+        <a href="lab 2.1.html" class="button1">Lab 2.1</a>
+        <a href="lab2.2.html" class="button2">Lab 2.2</a>
+        <a href="lab2.3.html" class="button3">Lab 2.3</a>
+        <a href="lab2.4.html" class="button4">Lab 2.4 </a>
+        
+    </nav>
+</head>
+
+<body>
+    
+
+    <h1>The D3 Journey starts here ... </h1>
+    <h2>Author: Yadanar Theint</h2>
+    <h3>Demo Q: Modifying the text labels to display just below each bar.</h3>
+    <script>
+        var w = 500;
+        var h = 200;
+        var barPadding = 3;
+        var label = 3;
+
+        var dataset = [14, 5, 26, 23, 9, 35, 12, 24, 19];
+
+        var svg = d3.select("body")
+                    .append("svg") 
+                    .attr("width", w)
+                    .attr("height", h)
+                    .attr("fill","rgb(106,90,205)");
+                   
+                    
+        // Bind data to rectangles and append them
+        svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x", function(d, i) { return i * (w /dataset.length);}) 
+            .attr("y", function(d) { return h - (d * 4)})
+            .attr("width", function(d) { return (w /dataset.length - barPadding);})
+            .attr("height", function(d) { return (d * 4)}) ;
+
+        svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text (function(d) { return d;})
+            .attr ("fill", "black")
+            .attr ("x", function(d,i) { return i * (w / dataset.length) + 16 ; })
+            //return h - (d * 2.0) + label
+            .attr("y", function(d) {  return h - (d * 4) + 15 });
+    </script>
+
+    <footer>
+        COS30045 Data Visualisation 
+    <br>
+    Yadanar Theint
+    </footer>
+
+</body>
+</html>

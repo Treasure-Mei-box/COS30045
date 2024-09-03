@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="description"	content="Data Visualisation "/>
+	<meta name="keywords"		  content="HTML, CSS ,D3"/>
+	<meta name="Mr.Mohamad Faizal Alias"			  content="Yadanar Theint"/>
+
+	<title>Task 2.1 D3 Data Binding </title>
+	<!--Insert description of exercise  -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+
+    <nav >
+        <a href="Main.html" class="button1">Main Page</a>
+        <a href="lab 2.1.html" class="button1">Lab 2.1</a>
+        <a href="lab2.2.html" class="button2">Lab 2.2</a>
+        <a href="lab2.3.html" class="button3">Lab 2.3</a>
+        <a href="lab2.4.html" class="button4">Lab 2.4 </a>
+    </nav>
+	
+
+</head>
+
+<body>
+    
+
+	<h1>The D3 Journey starts here ... </h1>
+    <h2>Author: Yadanar Theint</h2>
+	
+    <script>
+        var dataset = [14,5,26,23,9];
+        var color1 =d3.color ("red");
+
+        d3.select ("body") .selectAll ("p")
+            .data(dataset)
+            .enter()
+            .append ("p") //generate p according to number of data in the dataset
+
+            .style ("color", function(d)
+             { if (d>10) return "red" })
+
+            .text (function(d)
+            {
+                if (d>10) 
+                {
+                    return "Warning:NAME watched " + d + "cat movies today.";
+                }
+
+                else
+                {
+                    return "NAME watched " + d + "cat videos today.";
+                }
+
+            });
+    </script>
+	<br>
+    <bf>
+
+    <footer style="color: grey;">
+        COS30045 Data Visualisation 
+    <br>
+        Yadanar Theint
+    </footer>
+	
+	</section>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+.section-container {
+    transition: all 0.3s ease
+}
+
+.same-height-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ensures the card fills the container */
+}
+
+#visualizations .same-height-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 450px;
+    /* Set a minimum height for the cards */
+    flex-grow: 1;
+    /* Make sure cards grow to fill available space */
+}
+
+/* CSS for container */
+#LEF-container {
+    width: 1300px;
+    padding: 10px;
+}
+
+.visualization-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.country {
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.country:hover {
+    stroke: #000;
+    /* Black border on hover */
+    stroke-width: 1px;
+    /* Visible outline */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.BRtooltip,
+.POPtooltip,
+.LETtooltip {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    opacity: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.2s ease;
+    max-width: 200px;
+    /* Limit the width of the tooltip for readability */
+    white-space: nowrap;
+}
+
+
+.LEMtooltip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+
+.chart-container-compact {
+    flex: 1;
+    min-height: 300px;
+    height: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Adjust based on your layout */
+    width: 100%;
+    /* Adjust based on your layout */
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    /* Ensure the height fills the container */
+    width: 100%;
+    /* Ensure the width fills the container */
+}
+
+
+
+
+
+
+.visualization-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+svg {
+    background-color: white;
+    align-content: center;
+}
+
+/* Visualization Container */
+#visualization {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width:768px) {
+    .visualization-card {
+        padding: 0.75rem
+    }
+
+    .visualization-card h3 {
+        font-size: 0.875rem
+    }
+
+    .visualization-card p {
+        font-size: 0.75rem
+    }
+
+    .chart-container-compact {
+        min-height: 200px
+    }
+}

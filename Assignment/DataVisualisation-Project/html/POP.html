@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ASEAN Population Visualization Dashboard exploring demographic patterns across Southeast Asian nations">
+    <title>ASEAN Population Visualization</title>
+
+    <!-- Linking CSS for consistent styling -->
+    <link rel="stylesheet" href="../style/POP.css">
+    <link rel="stylesheet" href="../style/HF.css">
+
+
+    <!-- D3.js library for interactive visualization -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Header -->
+        <header role="banner" class="bg-white shadow-lg">
+            <nav role="navigation" aria-label="Main navigation" class="max-w-7xl mx-auto px-4" style="margin: auto;">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="http://sharin.me/COS30045-DataVisualisation-Project/#visualizations"
+                            class="text-xl font-bold">ASEAN Health Insights</a>
+                    </div>
+                    <ul class="flex items-center space-x-4">
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#overview"
+                                class="text-gray-700 hover:text-blue-600">Overview</a></li>
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#visualizations"
+                                class="text-gray-700 hover:text-blue-600">Visualizations</a></li>
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#analysis"
+                                class="text-gray-700 hover:text-blue-600">Gender-Based Analysis</a></li>
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#insights"
+                                class="text-gray-700 hover:text-blue-600">Insights</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Main Container -->
+        <div class="container">
+
+            <!-- Introduction Alert -->
+            <div id="intro-alert" class="alert">
+                <div class="alert-icon">ℹ️</div>
+                <p>Explore ASEAN's population dynamics through this interactive visualization.
+                    Hover over regions to uncover insights about population distribution and growth rates.</p>
+                <button class="close-btn" onclick="closeIntro()">×</button>
+            </div>
+
+            <!-- Main Visualization Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h1>Population Growth in ASEAN Nations (2003-2023)</h1>
+                    <p class="subtitle">Explore the population growth trends across ASEAN countries
+                        from 2003 to 2023 with this interactive bubble pack chart. Hover over the countries to
+                        uncover insights about population size and growth rates.</p>
+                </div>
+
+                <div class="card-content">
+                    <!-- Visualization container -->
+                    <div id="visualization"></div>
+                    <!-- Tooltip -->
+                    <div class="POPtooltip" style="position: absolute; opacity: 0;"></div>
+                    <div id="legend-items"></div>
+
+
+                    <!-- Insight Panel -->
+                    <div id="insight-panel" class="insight-panel hidden">
+                        <h3 class="insight-title">Regional Highlights</h3>
+                        <p class="insight-content">Key trends and observations will display here based on user
+                            interaction.
+                        </p>
+                    </div>
+                    <!-- Description -->
+                    <div class="observations">
+                        <h3>Description</h3>
+                        <p>This dataset contains annual population figures for ten ASEAN countries from 2003 to 2023.
+                            The data covers the following countries: Brunei Darussalam, Cambodia, Indonesia, Laos,
+                            Malaysia, Myanmar, the Philippines, Singapore, Thailand, and Vietnam. For each country,
+                            population figures are provided for each year, starting from 2003 up to 2023. The dataset
+                            allows for trend analysis, highlighting population growth over the years. It is valuable for
+                            understanding demographic changes, urbanization patterns, and planning for healthcare,
+                            infrastructure, and other essential services in these countries.
+                    </div>
+                    <!-- Key Observations -->
+                    <div class="observations">
+                        <h3>Key Observations</h3>
+                        <ul>
+                            <li>Population size is represented by circle area</li>
+                            <li>Darker shades indicate higher population density</li>
+                            <li>Growth rates vary significantly across the region</li>
+                            <li>Singapore shows the highest growth rate despite a smaller population</li>
+                        </ul>
+                    </div>
+
+                    <!-- Legend Section -->
+                    <div id="legend"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript for Visualization and Alert Close Function -->
+        <script src="../script/POP.js"></script>
+        <script>
+            function closeIntro() {
+                document.getElementById("intro-alert").style.display = "none";
+            }
+        </script>
+    </main>
+</body>
+<footer role="contentinfo" class="bg-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <p class="text-center text-gray-600">© COS30045 Data Visulisation - ASEAN Health Visualization Project</p>
+        <p class="text-center text-gray-600">Shin Thant Thi Ri ~ Yadanar Theint</p>
+    </div>
+</footer>
+
+</html>

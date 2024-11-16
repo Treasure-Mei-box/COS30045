@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ASEAN Health Visualization Dashboard exploring health metrics and demographic patterns across Southeast Asian nations">
+    <meta name="author" content="SHIN THANT THI RI, YADANAR THEINT">
+    <meta name="keywords" content="Data Visualisation, HTML, CSS, JavaScript" />
+
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <title>ASEAN Health Visualization</title>
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header role="banner" class="bg-white shadow-lg">
+        <nav role="navigation" aria-label="Main navigation" class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="http://sharin.me/COS30045-DataVisualisation-Project/#visualizations"
+                        class="text-xl font-bold">ASEAN Health Insights</a>
+                </div>
+                <ul class="flex items-center space-x-4">
+                    <li><a href="#overview" class="text-gray-700 hover:text-blue-600">Overview</a></li>
+                    <li><a href="#visualizations" class="text-gray-700 hover:text-blue-600">Visualizations</a></li>
+                    <li><a href="#analysis" class="text-gray-700 hover:text-blue-600">Gender-Based Analysis</a></li>
+                    <li><a href="#insights" class="text-gray-700 hover:text-blue-600">Insights</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <!-- Header Section -->
+        <section id="overview" aria-labelledby="overview-title" class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <header class="text-center mb-8">
+                    <h1 id="overview-title" class="text-3xl font-bold mb-4">ASEAN Health Visualization</h1>
+                    <h3 class="text-lg font-semibold mb-4">Interactive map showing the variations in birth-rate across
+                        ASEAN countries.
+                    </h3>
+                </header>
+
+
+                <!-- Interactive Map -->
+                <a href="html/BR.html">
+                    <figure class="map-container mb-8" aria-label="ASEAN region map">
+                        <article class="visualization-card p-6 mt-6">
+                            <figure class="chart-container" aria-label="Life Expectancy Heatmap">
+                                <figcaption class="sr-only">Interactive map showing health metrics across ASEAN
+                                    countries
+                                </figcaption>
+                                <script type="module" src="IBR.js"></script>
+                                <svg id="BR"></svg>
+                                <div class="BRtooltip"></div>
+                            </figure>
+                        </article>
+                    </figure>
+                </a>
+
+
+
+                <!-- Key Metrics Dashboard -->
+                <section aria-label="Key metrics dashboard" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <article class="metric-card">
+                        <h2 class="text-lg font-semibold mb-2">Life Expectancy</h2>
+                        <data class="text-3xl font-bold text-blue-600" id="avg-life-expectancy" value="73.2">73.2</data>
+                        <p class="text-sm text-gray-600">Regional Average</p>
+                    </article>
+
+                    <article class="metric-card">
+                        <h2 class="text-lg font-semibold mb-2">Population</h2>
+                        <data class="text-3xl font-bold text-green-600" id="total-population" value="675">675M</data>
+                        <p class="text-sm text-gray-600">Total ASEAN</p>
+                    </article>
+
+                    <article class="metric-card">
+                        <h2 class="text-lg font-semibold mb-2">Demographics</h2>
+                        <data class="text-3xl font-bold text-purple-600" id="birth-rate" value="19.5">19.5M</data>
+                        <p class="text-sm text-gray-600">Birth Rate</p>
+                    </article>
+                </section>
+            </div>
+        </section>
+
+        <!-- Interactive Visualizations -->
+        <section id="visualizations" aria-labelledby="viz-title" class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 id="viz-title" class="text-2xl font-bold mb-8">Interactive Visualizations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <a href="html/LET.html">
+                        <article class="visualization-card p-6 mt-6 same-height-card">
+                            <h3 class="text-lg font-semibold mb-4">Life Expectancy Heatmap (2013-2022)</h3>
+                            <p class="text-gray-600 mb-4">Explore the variations in life expectancy across ASEAN
+                                countries
+                                from 2013 to 2022 with this interactive heatmap.</p>
+                            <figure class="chart-container" aria-label="Life Expectancy Heatmap">
+                                <figcaption class="sr-only">Heatmap showing life expectancy trends for ASEAN countries
+                                    from
+                                    2013 to 2022</figcaption>
+                                <div id="LET"></div>
+                                <script type="module" src="script/LET.js"></script>
+                            </figure>
+                        </article>
+                    </a>
+                    <a href="html/POP.html">
+                        <article class="visualization-card p-6 mt-6 same-height-card">
+                            <h3 class="text-lg font-semibold mb-4">Population Growth in ASEAN Nations (2003-2023)</h3>
+                            <p class="text-gray-600 mb-4">Explore the population growth trends across ASEAN countries
+                                from 2003 to 2023 with this interactive Bubble Pack chart.</p>
+                            <figure class="chart-container" aria-label="Population Growth Chart">
+                                <figcaption class="sr-only">Interactive chart showing population growth trends
+                                    for ASEAN countries from 2003 to 2023</figcaption>
+                                <div class="card-content">
+                                    <!-- Visualization container -->
+                                    <script type="module" src="script/POP.js"></script>
+                                    <div id="visualization"></div>
+                                </div>
+                            </figure>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Gender Analysis Section -->
+        <section id="analysis" class="py-8 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6">Gender-Based Analysis</h2>
+
+                <!-- Male Life Expectancy -->
+                <a href="html/LEM.html">
+                    <!-- Population Growth Bubble Chart -->
+                    <article class="visualization-card p-6 mt-6">
+                        <h3 class="text-lg font-semibold mb-4">Male Life Expectancy (2013-2022)
+                        </h3>
+                        <p class="text-gray-600 mb-4">Explore the Male Life Expectancy trends
+                            across ASEAN countries
+                            from
+                            2013 to 2022 with
+                            this interactive Radial chart.</p>
+                        <figure class="chart-container" aria-label="Male Life Expectancy Chart">
+                            <figcaption class="sr-only">Radial chart showing life-expectancy of
+                                Male for ASEAN
+                                countries from 2003 to
+                                2023</figcaption>
+                            <div class="card-content">
+                                <script type="module" src="script/LEM.js"></script>
+                                <svg id="LEM" width="1500" height="600"></svg>
+                                <div class="LEMtooltip" style="position: absolute; opacity: 0;"></div>
+                                <div id="LEMLegend"></div>
+                            </div>
+                        </figure>
+                    </article>
+                </a>
+                <!-- Female Life Expectancy -->
+                <a href="html/LEF.html">
+                    <!-- Population Growth Bubble Chart -->
+                    <article class="visualization-card p-6 mt-6">
+                        <h3 class="text-lg font-semibold mb-4">Female Life Expectancy
+                            (2013-2022)</h3>
+                        <p class="text-gray-600 mb-4">Explore the Female Life Expectancy trends
+                            across ASEAN countries
+                            from
+                            2013 to 2022 with
+                            this interactive Line chart.</p>
+                        <figure class="chart-container" aria-label="Male Life Expectancy Chart">
+                            <figcaption class="sr-only">Line chart showing life-expectancy of
+                                Female for ASEAN
+                                countries from 2013 to
+                                2022</figcaption>
+                            <div class="card-content">
+                                <script type="module" src="script/LEF.js"></script>
+                                <div id="LEF-container">
+                                    <div id="LEF"></div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="tooltip"></div>
+                    </article>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Insights Section -->
+        <section id="insights" aria-labelledby="insights-title" class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 id="insights-title" class="text-2xl font-bold mb-8 text-left text-gray-800">Key Insights
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Regional Patterns Insight -->
+                    <article
+                        class="visualization-card p-8 bg-white shadow-lg rounded-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-700">Regional Patterns in ASEAN Health
+                            Data</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Over the past three decades (1990–2023), ASEAN nations have witnessed diverse health
+                            trends.
+                            While Singapore consistently excels in healthcare quality, countries like Myanmar
+                            still face
+                            barriers like limited infrastructure and accessibility.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Key progress has been seen in Malaysia and Thailand, where targeted policies have
+                            improved
+                            life expectancy for women, showcasing the importance of gender-focused health
+                            strategies.
+                            However, challenges persist in balancing birth rates with available resources in
+                            rural
+                            regions.
+                        </p>
+                        <p class="font-medium text-gray-700">
+                            Key Finding: Regional disparities highlight the need for scalable healthcare models
+                            tailored to diverse economic and social contexts.
+                        </p>
+                    </article>
+
+                    <!-- Future Implications Insight -->
+                    <article
+                        class="visualization-card p-8 bg-white shadow-lg rounded-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-700">Future Implications of Health
+                            Trends</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            By 2035, an aging population will redefine healthcare priorities across Southeast
+                            Asia.
+                            Nations like Thailand and Vietnam are projected to see over 25% of their populations
+                            aged 60
+                            or older, emphasizing the urgent need for geriatric care infrastructure.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Urbanization and technological advancements present opportunities to integrate
+                            telemedicine,
+                            AI-driven diagnostics, and preventive care, ensuring accessible healthcare for both
+                            urban
+                            and rural communities.
+                        </p>
+                        <p class="font-medium text-gray-700">
+                            Key Finding: Proactive investments in healthcare innovation and sustainability will
+                            be
+                            critical to navigating these demographic shifts.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="bg-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-center text-gray-600">© COS30045 Data Visulisation - ASEAN Health Visualization Project</p>
+            <p class="text-center text-gray-600">Shin Thant Thi Ri ~ Yadanar Theint</p>
+        </div>
+    </footer>
+    <!-- script -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+</body>
+
+</html>

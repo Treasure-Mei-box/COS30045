@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ASEAN Male Life Expectancy Dashboard exploring health trends across Southeast Asia">
+    <title>ASEAN Male Life Expectancy Visualization</title>
+
+    <!-- Link to CSS for consistent styling -->
+    <link rel="stylesheet" href="../style/LE.css">
+    <link rel="stylesheet" href="../style/HF.css">
+
+
+    <!-- D3.js library for interactive visualization -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Header -->
+        <header role="banner" class="bg-white shadow-lg">
+            <nav role="navigation" aria-label="Main navigation" class="max-w-7xl mx-auto px-4" style="margin: auto;">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="http://sharin.me/COS30045-DataVisualisation-Project/#visualizations"
+                            class="text-xl font-bold">ASEAN Health Insights</a>
+                    </div>
+                    <ul class="flex items-center space-x-4">
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#overview"
+                                class="text-gray-700 hover:text-blue-600">Overview</a></li>
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#visualizations"
+                                class="text-gray-700 hover:text-blue-600">Visualizations</a></li>
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#analysis"
+                                class="text-gray-700 hover:text-blue-600">Gender-Based Analysis</a></li>
+                        <li><a href="http://sharin.me/COS30045-DataVisualisation-Project/#insights"
+                                class="text-gray-700 hover:text-blue-600">Insights</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Container -->
+        <div class="container">
+
+            <!-- Introduction Alert -->
+            <div id="intro-alert" class="alert">
+                <div class="alert-icon">ℹ️</div>
+                <p>Explore trends in male life expectancy across ASEAN countries. Hover over countries to view
+                    individual
+                    life expectancy rates.</p>
+                <button class="close-btn" onclick="closeIntro()">×</button>
+            </div>
+
+            <!-- Main Visualization Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h1>Male Life Expectancy in ASEAN Nations</h1>
+                    <p class="subtitle">An interactive exploration of life expectancy rates for males across ASEAN
+                        countries
+                    </p>
+                </div>
+
+                <div class="card-content">
+                    <!-- Visualization Container -->
+                    <svg id="LEM" width="1000" height="600"></svg>
+                    <div class="LEMtooltip" style="position: absolute; opacity: 0;"></div>
+                    <div id="LEMLegend"></div>
+
+                    <!-- Insight Panel -->
+                    <div id="insight-panel" class="insight-panel hidden">
+                        <h3 class="insight-title">Regional Highlights</h3>
+                        <p class="insight-content">Key trends and observations will display here based on user
+                            interaction.
+                        </p>
+                    </div>
+                    <!-- Description -->
+                    <div class="observations">
+                        <h3>Description</h3>
+                        <p>The dataset presents life expectancy data for males across ASEAN countries from 2013 to 2022.
+                            It highlights trends in male longevity for nations such as Brunei Darussalam, Cambodia,
+                            Indonesia, Malaysia, and Singapore. While countries like Singapore consistently exhibit high
+                            life expectancy rates above 80 years, others like Cambodia and Myanmar show notable
+                            improvements over the decade. Variations in the data reflect the impacts of healthcare
+                            quality, economic development, and societal factors, including the COVID-19 pandemic's
+                            influence in 2020 and subsequent years. This dataset is valuable for understanding regional
+                            disparities and tracking progress in health outcomes for men.</p>
+                    </div>
+                    <!-- Key Observations -->
+                    <div class="observations">
+                        <h3>Key Observations</h3>
+                        <ul>
+                            <li>Singapore's male life expectancy is among the highest in the region.</li>
+                            <li>Indonesia and the Philippines show noticeable progress in male life expectancy.</li>
+                            <li>Challenges such as healthcare access and environmental factors still impact life
+                                expectancy
+                                in certain nations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript for Visualization and Alert Close Function -->
+        <script src="../script/LEM.js"></script>
+        <script>
+            function closeIntro() {
+                document.getElementById("intro-alert").style.display = "none";
+            }
+        </script>
+    </main>
+</body>
+<footer role="contentinfo" class="bg-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <p class="text-center text-gray-600">© COS30045 Data Visulisation - ASEAN Health Visualization Project</p>
+        <p class="text-center text-gray-600">Shin Thant Thi Ri ~ Yadanar Theint</p>
+    </div>
+</footer>
+
+</html>

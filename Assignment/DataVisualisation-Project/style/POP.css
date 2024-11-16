@@ -1,0 +1,176 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Alert Styles */
+.alert {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    border: 1px solid #90caf9;
+}
+
+.alert-icon {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+
+.close-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Visualization Container */
+#visualization {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 1.5rem;
+}
+
+/* Insight Panel */
+.insight-panel {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.insight-panel.hidden {
+    display: none;
+}
+
+.insight-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2c6aa0;
+}
+
+/* Observations */
+.observations {
+    margin: 2rem 0;
+}
+
+.observations h3 {
+    margin-bottom: 1rem;
+}
+
+.observations ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.observations li {
+    margin-bottom: 0.5rem;
+}
+
+/* Legend */
+.legend {
+    margin-top: 2rem;
+}
+
+.legend h3 {
+    margin-bottom: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.POPtooltip {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    opacity: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.2s ease;
+    max-width: 200px;
+    /* Limit the width of the tooltip for readability */
+    white-space: nowrap;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem auto;
+    }
+
+    #visualization {
+        height: 400px;
+    }
+
+    .card-header {
+        padding: 1rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+}
